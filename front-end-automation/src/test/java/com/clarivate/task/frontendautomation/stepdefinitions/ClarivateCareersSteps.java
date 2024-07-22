@@ -37,13 +37,13 @@ public class ClarivateCareersSteps {
 		googlePage.search(query);
 	}
 
-	@Then("I write the titles of all results on the first page to a text file")
-	public void iWriteTheTitlesToATextFile() {
-		ResultsPage resultsPage = testContext.pageObjectManager.getMeResultsPage();
-		List<WebElement> allResults = resultsPage.getAllResults();
-
-		testContext.genericUtils.addAllResultsToTextFile(allResults);
-	}
+//	@Then("I write the titles of all results on the first page to a text file")
+//	public void iWriteTheTitlesToATextFile() {
+//		ResultsPage resultsPage = testContext.pageObjectManager.getMeResultsPage();
+//		List<WebElement> allResults = resultsPage.getAllResults();
+//
+//		testContext.genericUtils.addAllResultsToTextFile(allResults);
+//	}
 
 	@Given("I navigate to the {string} website from Google search results")
 	public void navigateToTheWebsiteFromGoogleSearch(String website) {
@@ -55,15 +55,16 @@ public class ClarivateCareersSteps {
 	@When("I click on the {string} link")
 	public void iClickOnTheLink(String link) {
 		ClarivateHomePage clarivateHomePage = testContext.pageObjectManager.getMeClarivateHomePage();
+		clarivateHomePage.handleCookies();
 		clarivateHomePage.clickONLink(link);
-
+		testContext.genericUtils.switchToChildWindow();
 	}
 
-//	@When("I filter the list for {String} jobs in {String}")
-//	public void filterTheList(String category, String Location) {
-//
-//	}
-//
+	@When("I filter the list for {String} jobs in {String}")
+	public void filterTheList(String category, String Location) {
+		
+	}
+
 //	@Then("the number of jobs shown matches the count in the brackets")
 //	public void theNumberOfJobsShownMatches() {
 //

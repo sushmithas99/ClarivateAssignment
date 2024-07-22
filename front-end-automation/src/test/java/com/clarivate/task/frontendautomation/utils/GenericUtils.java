@@ -3,7 +3,9 @@ package com.clarivate.task.frontendautomation.utils;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,5 +25,12 @@ public class GenericUtils {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	public void switchToChildWindow() {
+		Set<String> windowHandle = driver.getWindowHandles();
+		Iterator<String> it = windowHandle.iterator();
+		String parentId = it.next();
+		String childId = it.next();
+		driver.switchTo().window(childId);
 	}
 }

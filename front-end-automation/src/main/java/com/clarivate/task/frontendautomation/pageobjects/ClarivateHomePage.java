@@ -27,7 +27,7 @@ public class ClarivateHomePage {
 	
 	public void handleCookies() {
 		manageCookies.click();
-		
+		allowAll.click();
 	}
 	
 }

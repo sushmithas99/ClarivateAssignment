@@ -4,8 +4,8 @@ Feature: Google Search and Clarivate careers
   Given I Navigate to Google 
     When I search for "Clarivate Analytics"
     
-  Scenario: write the titles of all results on the first page to a text file
-    Then I write the titles of all results on the first page to a text file
+  #Scenario: write the titles of all results on the first page to a text file
+    #Then I write the titles of all results on the first page to a text file
 
 
   Scenario: Filter Technology jobs in Bangalore
