@@ -18,4 +18,7 @@ public class PageObjectManager {
 	public ClarivateHomePage getMeClarivateHomePage() {
 		return new ClarivateHomePage(driver);
 	}
+	public CareersPage getMeCareersPage() {
+		return new CareersPage(driver);
+	}
 }

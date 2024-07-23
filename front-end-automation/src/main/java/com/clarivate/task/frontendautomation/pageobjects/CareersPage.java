@@ -21,19 +21,25 @@ String category;
 	@FindBy(id = "ph-search-backdrop")
 	private WebElement searchBtn;
 
-	@FindBy(css = "#CategoryAccordion span")
-	private WebElement categorySec;
+	@FindBy(css = "#CityAccordion")
+	private WebElement citySec;
 
 	
 	
-//	@FindBy(xpath = "")
-//	private WebElement technology;
+	@FindBy(xpath = "//label[text()='Bangalore ']/span/span")
+	private WebElement technology;
 
 	public void searchCareers(String place, String category) {
-		searchBox.sendKeys(place);
+		searchBox.sendKeys(category);
 		searchBtn.click();
-		categorySec.click();
-		By technology =By.xpath("//input[contains(@id,"+category+")]");
-		driver.findElement(technology).click();
+		citySec.click();
+		By city =By.xpath("//label[text()='Bangalore ']/span/span");
+		driver.findElement(city).click();
+	}
+	public String getCount() {
+		By placeRes =By.xpath("//label[text()='Bangalore ']/span/span");
+		String countInBrackets = driver.findElement(placeRes).getText();
+		String count = countInBrackets.replaceAll("[^0-9]","");
+		return count;
 	}
 }

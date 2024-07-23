@@ -9,6 +9,7 @@ public class TestContextSetup {
 	public TestContextSetup() {
 		 testBase = new TestBase();
 			pageObjectManager = new PageObjectManager(testBase.webDriverManager());
+			
 			genericUtils = new GenericUtils(testBase.webDriverManager());
 	}
 
